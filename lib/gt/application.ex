@@ -6,12 +6,13 @@ defmodule GT.Application do
   use Application
 
   def start(_type, _args) do
+    import Supervisor.Spec, warn: false
     # List all child processes to be supervised
     children = [
       # Starts a worker by calling: GT.Worker.start_link(arg)
       # {GT.Worker, arg},
-      {GT.Supervisor, []},
-      {GT.Supervisor, []}
+      supervisor(Registry, [:unique, :account_process_registry]),
+      supervisor(GT.AccountSupervisor, [])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
