@@ -19,10 +19,6 @@ erl_crash.dump
 # Also ignore archive artifacts (built via "mix archive.build").
 *.ez
 
-/apps/gtfront_web/assets/node_modules
+# Ignore package tarball (built via "mix hex.build").
+gt-*.tar
 
-/apps/gtfront_web/priv/static/
-
-/apps/gtfront_web/config/*.secret.exs
-
-npm-debug.log
