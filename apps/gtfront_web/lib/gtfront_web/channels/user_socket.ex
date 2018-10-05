@@ -2,7 +2,7 @@ defmodule GtfrontWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", GtfrontWeb.RoomChannel
+  channel "room:*", GtfrontWeb.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
